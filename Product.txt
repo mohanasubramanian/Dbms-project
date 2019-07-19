@@ -1,0 +1,11 @@
+String id=request.getParameter("cloth_id");
+				DbIntr intr = FactoryClass.getInstance();
+				try {
+					Clothes fetchById = intr.fetchById(Integer.parseInt(id));
+				request.setAttribute("clothes", fetchById);
+				request.getRequestDispatcher("WEB-INF/product.jsp").forward(request, response);
+				
+				} catch (NumberFormatException | SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}

@@ -1,0 +1,28 @@
+String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		
+		password=Encryption.encryptPassword(password);
+		DbIntr intr = FactoryClass.getInstance();
+		LoginModel lm=new LoginModel();
+		lm.setUsername(username);
+		lm.setPassword(password);
+		try {
+			boolean login = intr.login(lm);
+			if(login) {
+				//go to welcome page
+				request.setAttribute("username", username);
+				
+				request.getRequestDispatcher("Welcome.java").forward(request, response);
+			}
+			else {
+				request.setAttribute("message", "invalid username and password");
+				request.getRequestDispatcher("Login.jsp").forward(request, response);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	
+	

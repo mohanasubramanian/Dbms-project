@@ -1,0 +1,28 @@
+<table class="table">
+	<c:forEach items="${clothesList}" var="m">
+		<tr>
+			<td>
+				${m.category}
+			</td>
+			<td>
+				${m.style}
+			</td>
+			<td>
+				${m.type}
+			</td>
+			<td>
+				${m.colour}
+			</td>
+		<td>
+				${m.cost}
+			</td>
+		<td>
+				${m.size}
+			</td>
+			<td>
+				<a class="btn btn-primary" href='Product?clothes_id=${m.clothes_id}'> Details</a>
+			</td>
+		
+		</tr>
+	</c:forEach>
+</table>

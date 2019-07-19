@@ -1,0 +1,31 @@
+<div class="row">
+<div class="col-xs-6">
+	<img src='${clothes.imgUrl}' style="width:100%">
+</div>
+<div class="col-xs-6">
+
+	<table class="table">
+		<tr>
+			<td>
+				${clothes.category}
+			</td>
+			<td>
+				${clothes.cost}
+			</td>
+		<td>
+				${clothes.style}
+			</td>
+		<td>
+				${clothes.type}
+			</td>
+		<td>
+				${clothes.size}
+			</td>
+		<td>
+				${clothes.colour}
+			</td>
+		</tr>
+
+</table>
+</div>
+</div>
